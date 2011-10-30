@@ -21,7 +21,7 @@
 #include "extendedcommands.h"
 
 
-char* MENU_HEADERS[] = { "Vol+/- keys to highlight & power selects.            Open both screens to see the CWM menu",
+char* MENU_HEADERS[] = { "Vol+/- keys to highlight & power selects.                Open both screens to see the CWM menu",
                          "                                                                SAR v.2e **RC1**",
                          NULL };
 

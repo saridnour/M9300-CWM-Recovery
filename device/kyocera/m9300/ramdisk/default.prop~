@@ -1,0 +1,14 @@
+#
+# ADDITIONAL_DEFAULT_PROPERTIES
+#
+ro.secure=0
+ro.allow.mock.location=1
+ro.debuggable=1
+ro.factorytest=1
+persist.service.adb.enable=1
+ro.product.manufacturer=KYOCERA
+ro.sf.lcd_density=200
+ro.build.user=test
+ro.build.host=test
+ro.build.tags=test-keys
+

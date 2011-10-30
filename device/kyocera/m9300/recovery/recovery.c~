@@ -62,7 +62,6 @@ static const char *LAST_LOG_FILE = "/cache/recovery/last_log";
 static const char *SDCARD_ROOT = "/sdcard";
 static int allow_display_toggle = 1;
 static int poweroff = 0;
-static int justbooted = 1;
 static const char *SDCARD_PACKAGE_FILE = "/sdcard/update.zip";
 static const char *TEMPORARY_LOG_FILE = "/tmp/recovery.log";
 static const char *SIDELOAD_TEMP_DIR = "/tmp/sideload";
@@ -455,21 +454,12 @@ get_menu_selection(char** headers, char** items, int menu_only,
     // accidentally trigger menu items.
     ui_clear_key_queue();
 
+//sar
+   // ui_menu_select(5);
+
     int item_count = ui_start_menu(headers, items, initial_selection);
     int selected = initial_selection;
     int chosen_item = -1;
-
-    // SAR added to toggle screen on at first boot for Echo Device
-    if (justbooted == 1) {
-        ui_menu_select(5);
-        ui_menu_select(4);
-        ui_menu_select(3);
-        ui_menu_select(2);
-        ui_menu_select(1);
-        ui_menu_select(0);
-        justbooted = 0;
-   }
-
 
     // Some users with dead enter keys need a way to turn on power to select.
     // Jiggering across the wrapping menu is one "secret" way to enable it.
@@ -512,9 +502,9 @@ get_menu_selection(char** headers, char** items, int menu_only,
             chosen_item = action;
         }
 
+
        ui_set_showing_back_button(1);
     }
-
     ui_end_menu();
     ui_clear_key_queue();
     return chosen_item;
@@ -767,7 +757,7 @@ print_property(const char *key, const char *name, void *cookie) {
 
 int
 main(int argc, char **argv) {
-	if (strcmp(basename(argv[0]), "recovery") != 0)
+	if (strstr(argv[0], "recovery") == NULL)
 	{
 	    if (strstr(argv[0], "flash_image") != NULL)
 	        return flash_image_main(argc, argv);
