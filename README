@@ -1,4 +1,4 @@
 Recovery image for Kyocera m9300 "echo" 
 
 Need to add the recovery.c and ui.c files to source to include the "Go Back" button by default and leave it on. 
-also expands the display max so text can be intered on the second screen. 
+also expands the display max so text can be seen on the second screen. 
