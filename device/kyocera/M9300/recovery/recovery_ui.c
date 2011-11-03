@@ -22,7 +22,7 @@
 
 
 char* MENU_HEADERS[] = { "Vol+/- keys to highlight & power selects.            Open both screens to see the CWM menu",
-                         "                                                                    SAR v1.0",
+                         "                                                                    SAR v1.1",
                          NULL };
 
 char* MENU_ITEMS[] = { "reboot Echo now",
